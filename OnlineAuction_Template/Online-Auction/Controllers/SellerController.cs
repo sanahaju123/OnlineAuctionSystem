@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Online_Auction.Controllers
 {
-    [Route("api/[controller]")]
+    //[Route("api/[controller]")]
     [ApiController]
     public class SellerController : ControllerBase
     {
