@@ -37,7 +37,7 @@ namespace Online_Auction.Tests.TestCases
         private readonly RegisterCustomerViewModel _registerCustomerViewModel;
         private readonly RegisterSellerViewModel _registerSellerViewModel;
 
-        private static string type = "Exceptional";
+        private static string type = "Exception";
 
         public ExceptionalTests(ITestOutputHelper output)
         {

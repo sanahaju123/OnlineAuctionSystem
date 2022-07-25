@@ -32,7 +32,7 @@ namespace Online_Auction.Tests.TestCases
 
         private readonly RegisterProductViewModel _registerProductViewModel;
         private readonly RegisterCustomerViewModel _registerCustomerViewModel;
-        private static string type = "Boundary";
+        private static string type = "Exception";
         public ExceptionalTests(ITestOutputHelper output)
         {
             _productServices = new ProductServices(productservice.Object);
