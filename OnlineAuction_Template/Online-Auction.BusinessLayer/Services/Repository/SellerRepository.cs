@@ -19,26 +19,31 @@ namespace Online_Auction.BusinessLayer.Services.Repository
 
         public async Task<Seller> FindSellerById(long sellerId)
         {
+            //Write Your Code Here
             throw new NotImplementedException();
         }
 
         public async Task<IEnumerable<Bids>> GetBidsByProductId(long productId)
         {
+            //Write Your Code Here
             throw new NotImplementedException();
         }
 
         public async Task<IEnumerable<Seller>> ListAllSellers()
         {
+            //Write Your Code Here
             throw new NotImplementedException();
         }
 
         public async Task<Seller> Register(Seller seller)
         {
+            //Write Your Code Here
             throw new NotImplementedException();
         }
 
         public async Task<Seller> UpdateSeller(RegisterSellerViewModel model)
         {
+            //Write Your Code Here
             throw new NotImplementedException();
         }
     }
