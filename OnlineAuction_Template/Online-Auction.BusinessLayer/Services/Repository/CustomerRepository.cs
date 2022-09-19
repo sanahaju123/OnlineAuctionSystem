@@ -19,100 +19,38 @@ namespace Online_Auction.BusinessLayer.Services.Repository
 
         public async Task<IEnumerable<Bids>> AllBidsByProductId(long productId)
         {
-            try
-            {
-                var isValid = _onlineAuctionDbContext.Products.Any(x => x.BiddingLastDate <= DateTime.Today && x.ProductId==productId);
-                if (isValid)
-                {
-                    var result = _onlineAuctionDbContext.Bids.
-                Where(x => x.ProductId == productId).ToList();
-                    return result;
-                }
-                return null;
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
         public async Task<Customer> FindCustomerById(long customerId)
         {
-            try
-            {
-                return await _onlineAuctionDbContext.Customers.FindAsync(customerId);
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
         public async Task<IEnumerable<Customer>> ListAllCustomers()
         {
-            try
-            {
-                var result = _onlineAuctionDbContext.Customers.
-                OrderByDescending(x => x.CustomerId).Take(10).ToList();
-                return result;
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
         public async Task<Bids> PlaceBid(Bids bids)
         {
-            try
-            {
-                var result = await _onlineAuctionDbContext.Bids.AddAsync(bids);
-                await _onlineAuctionDbContext.SaveChangesAsync();
-                return bids;
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
         public async Task<Customer> Register(Customer customer)
         {
-            try
-            {
-                var result = await _onlineAuctionDbContext.Customers.AddAsync(customer);
-                await _onlineAuctionDbContext.SaveChangesAsync();
-                return customer;
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
         public async Task<Customer> UpdateCustomer(RegisterCustomerViewModel model)
         {
-            var customer = await _onlineAuctionDbContext.Customers.FindAsync(model.CustomerId);
-            try
-            {
-
-                customer.Username = model.Username;
-                customer.Password = model.Password;
-                customer.Phone = model.Phone;
-                customer.IsDeleted = model.IsDeleted;
-                customer.Address = model.Address;
-                customer.Email = model.Email;
-                customer.IsDeleted = model.IsDeleted;
-                
-
-                _onlineAuctionDbContext.Customers.Update(customer);
-                await _onlineAuctionDbContext.SaveChangesAsync();
-                return customer;
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
     }
 }

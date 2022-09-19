@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 
 namespace Online_Auction.Controllers
 {
-    //[Route("api/[controller]")]
     [ApiController]
     public class CustomerController : ControllerBase
     {
@@ -34,26 +33,8 @@ namespace Online_Auction.Controllers
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Register([FromBody] RegisterCustomerViewModel model)
         {
-            var customerExists = await _customerServices.FindCustomerById(model.CustomerId);
-            if (customerExists != null)
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "Customer already exists!" });
-            //New object and value for user
-            Customer customer = new Customer()
-            {
-
-                Username = model.Username,
-                Password = model.Password,
-                Address = model.Address,
-                Email = model.Email,
-                Phone = model.Phone,
-                IsDeleted = false
-            };
-            var result = await _customerServices.Register(customer);
-            if (result == null)
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "Customer creation failed! Please check customer details and try again." });
-
-            return Ok(new Response { Status = "Success", Message = "Customer created successfully!" });
-
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -65,17 +46,8 @@ namespace Online_Auction.Controllers
         [Route("customers/update")]
         public async Task<IActionResult> UpdateCustomer([FromBody] RegisterCustomerViewModel model)
         {
-            var customer = await _customerServices.FindCustomerById(model.CustomerId);
-            if (customer == null)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response
-                { Status = "Error", Message = $"Customer With Id = {model.CustomerId} cannot be found" });
-            }
-            else
-            {
-                var result = await _customerServices.UpdateCustomer(model);
-                return Ok(new Response { Status = "Success", Message = "Customer Edited successfully!" });
-            }
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
 
@@ -88,24 +60,8 @@ namespace Online_Auction.Controllers
         [Route("customers/delete/{customerId}")]
         public async Task<IActionResult> DeleteCustomer(long customerId)
         {
-            var customer = await _customerServices.FindCustomerById(customerId);
-            if (customer == null || customer.IsDeleted == true)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response
-                { Status = "Error", Message = $"Customer With Id = {customerId} cannot be found" });
-            }
-            else
-            {
-                RegisterCustomerViewModel register = new RegisterCustomerViewModel();
-                register.CustomerId = customer.CustomerId;
-                register.Phone = customer.Phone;
-                register.Password = customer.Password;
-                register.Username = customer.Username;
-                register.Email = customer.Email;
-                register.IsDeleted = true;
-                var result = await _customerServices.UpdateCustomer(register);
-                return Ok(new Response { Status = "Success", Message = "Customer deleted successfully!" });
-            }
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -117,16 +73,8 @@ namespace Online_Auction.Controllers
         [Route("customers/get/{customerId}")]
         public async Task<IActionResult> GetCustomerById(long customerId)
         {
-            var customer = await _customerServices.FindCustomerById(customerId);
-            if (customer == null)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response
-                { Status = "Error", Message = $"Customer With Id = {customerId} cannot be found" });
-            }
-            else
-            {
-                return Ok(customer);
-            }
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -137,7 +85,8 @@ namespace Online_Auction.Controllers
         [Route("customers/get/all")]
         public async Task<IEnumerable<Customer>> ListAllCustomers()
         {
-            return await _customerServices.ListAllCustomers();
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -151,12 +100,8 @@ namespace Online_Auction.Controllers
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> PlaceBid(Bids bids)
         {
-            var result = await _customerServices.PlaceBid(bids);
-            if (result == null)
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "Bid creation failed! Please check bid details and try again." });
-
-            return Ok(new Response { Status = "Success", Message = "Bid created successfully!" });
-
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -168,17 +113,8 @@ namespace Online_Auction.Controllers
         [Route("customers/get/all-bids-on-product/{productId}")]
         public async Task<IActionResult> GetBidsByProductId(long productId)
         {
-            var product = await _customerServices.AllBidsByProductId(productId);
-            if (product == null)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response
-                { Status = "Error", Message = $"Bid With Id = {productId} cannot be found" });
-            }
-
-            else
-            {
-                return Ok(product);
-            }
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
         #endregion
     }

@@ -117,7 +117,7 @@ namespace Online_Auction.Tests.TestCases
         /// </summary>
         /// <returns></returns>
         [Fact]
-        public async Task<bool> Testfor_Validate_NgoRegistration()
+        public async Task<bool> Testfor_Validate_CustomerRegistration()
         {
             //Arrange
             bool res = false;
@@ -206,7 +206,7 @@ namespace Online_Auction.Tests.TestCases
         /// </summary>
         /// <returns></returns>
         [Fact]
-        public async Task<bool> Testfor_Validate_ifInvalidProductIdIsPassed()
+        public async Task<bool> Testfor_Validate_IfInvalidProductIdIsPassed()
         {
             //Arrange
             bool res = false;

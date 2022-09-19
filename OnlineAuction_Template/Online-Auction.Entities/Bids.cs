@@ -10,8 +10,6 @@ namespace Online_Auction.Entities
 {
     public class Bids
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long BidId { get; set; }
         public long ProductId { get; set; }
         public long CustomerId { get; set; }

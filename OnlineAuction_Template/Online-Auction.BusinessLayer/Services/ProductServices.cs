@@ -21,32 +21,38 @@ namespace Online_Auction.BusinessLayer.Services
 
         public async Task<Product> FindProductById(long productId)
         {
-            return await _productRepository.FindProductById(productId);
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
         public async Task<IEnumerable<Product>> GetProductByCategoryId(long categoryId)
         {
-            return await _productRepository.GetProductByCategoryId(categoryId);
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
         public async Task<IEnumerable<Product>> GetProductBySellerId(long sellerId)
         {
-            return await _productRepository.GetProductBySellerId(sellerId);
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
         public async Task<IEnumerable<Product>> ListAllProducts()
         {
-            return await _productRepository.ListAllProducts();
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
         public async Task<Product> Register(Product product)
         {
-            return await _productRepository.Register(product);
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
         public async Task<Product> UpdateProduct(RegisterProductViewModel model)
         {
-            return await _productRepository.UpdateProduct(model);
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
     }
 }

@@ -14,8 +14,7 @@ namespace Online_Auction.Entities
             Home=3,
             Clothing=5,
         }
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         public long ProductId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

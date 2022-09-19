@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 
 namespace Online_Auction.Controllers
 {
-    //[Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
     {
@@ -34,28 +33,8 @@ namespace Online_Auction.Controllers
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Register([FromBody] RegisterProductViewModel model)
         {
-            var productExists = await _productServices.FindProductById(model.ProductId);
-            if (productExists != null)
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "product already exists!" });
-            //New object and value for user
-            Product product = new Product()
-            {
-
-                Name = model.Name,
-                Description = model.Description,
-                BiddingLastDate = model.BiddingLastDate,
-                StartBiddingAmount = model.StartBiddingAmount,
-                CategoryId = (Product.Category)model.CategoryId,
-                Price = model.Price,
-                Quantity = model.Quantity,
-                SellerId=model.SellerId,
-                IsDeleted = false
-            };
-            var result = await _productServices.Register(product);
-            if (result == null)
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "Product creation failed! Please check product details and try again." });
-
-            return Ok(new Response { Status = "Success", Message = "Product created successfully!" });
+            //Write Your Code Here
+            throw new NotImplementedException();
 
         }
 
@@ -68,17 +47,8 @@ namespace Online_Auction.Controllers
         [Route("products/update")]
         public async Task<IActionResult> UpdateProduct([FromBody] RegisterProductViewModel model)
         {
-            var product = await _productServices.FindProductById(model.ProductId);
-            if (product == null)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response
-                { Status = "Error", Message = $"Product With Id = {model.ProductId} cannot be found" });
-            }
-            else
-            {
-                var result = await _productServices.UpdateProduct(model);
-                return Ok(new Response { Status = "Success", Message = "Product Edited successfully!" });
-            }
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
 
@@ -91,27 +61,8 @@ namespace Online_Auction.Controllers
         [Route("products/delete/{productId}")]
         public async Task<IActionResult> DeleteProduct(long productId)
         {
-            var product = await _productServices.FindProductById(productId);
-            if (product == null || product.IsDeleted == true)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response
-                { Status = "Error", Message = $"Product With Id = {productId} cannot be found" });
-            }
-            else
-            {
-                RegisterProductViewModel register = new RegisterProductViewModel();
-                register.ProductId = product.ProductId;
-                register.Name = product.Name;
-                register.Description = product.Description;
-                register.BiddingLastDate = product.BiddingLastDate;
-                register.StartBiddingAmount = product.StartBiddingAmount;
-                register.CategoryId = (long)(Product.Category)product.CategoryId;
-                register.Price = product.Price;
-                register.Quantity = product.Quantity;
-                register.IsDeleted = true;
-                var result = await _productServices.UpdateProduct(register);
-                return Ok(new Response { Status = "Success", Message = "Product deleted successfully!" });
-            }
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -123,16 +74,8 @@ namespace Online_Auction.Controllers
         [Route("products/get/{productId}")]
         public async Task<IActionResult> GetProductById(long productId)
         {
-            var product = await _productServices.FindProductById(productId);
-            if (product == null)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response
-                { Status = "Error", Message = $"Product With Id = {productId} cannot be found" });
-            }
-            else
-            {
-                return Ok(product);
-            }
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -144,16 +87,8 @@ namespace Online_Auction.Controllers
         [Route("products/get/by-category/{categoryId}")]
         public async Task<IActionResult> GetProductByCategoryId(long categoryId)
         {
-            var product = await _productServices.GetProductByCategoryId(categoryId);
-            if (product == null)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response
-                { Status = "Error", Message = $"Product With CategoryId = {categoryId} cannot be found" });
-            }
-            else
-            {
-                return Ok(product);
-            }
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
 
@@ -166,16 +101,8 @@ namespace Online_Auction.Controllers
         [Route("products/get/by-seller/{sellerId}")]
         public async Task<IActionResult> GetProductBySellerId(long sellerId)
         {
-            var product = await _productServices.GetProductBySellerId(sellerId);
-            if (product == null)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response
-                { Status = "Error", Message = $"Product With SellerId = {sellerId} cannot be found" });
-            }
-            else
-            {
-                return Ok(product);
-            }
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -186,7 +113,8 @@ namespace Online_Auction.Controllers
         [Route("products/get/all")]
         public async Task<IEnumerable<Product>> ListAllProducts()
         {
-            return await _productServices.ListAllProducts();
+            //Write Your Code Here
+            throw new NotImplementedException();
         }
         #endregion
 

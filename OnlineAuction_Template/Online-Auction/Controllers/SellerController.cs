@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 
 namespace Online_Auction.Controllers
 {
-    //[Route("api/[controller]")]
     [ApiController]
     public class SellerController : ControllerBase
     {
@@ -34,6 +33,7 @@ namespace Online_Auction.Controllers
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Register([FromBody] RegisterSellerViewModel model)
         {
+            //Write Your Code Here
             throw new NotImplementedException();
         }
 
@@ -46,6 +46,7 @@ namespace Online_Auction.Controllers
         [Route("sellers/update")]
         public async Task<IActionResult> UpdateSeller([FromBody] RegisterSellerViewModel model)
         {
+            //Write Your Code Here
             throw new NotImplementedException();
         }
 
@@ -59,6 +60,7 @@ namespace Online_Auction.Controllers
         [Route("sellers/delete/{sellerId}")]
         public async Task<IActionResult> DeleteSeller(long sellerId)
         {
+            //Write Your Code Here
             throw new NotImplementedException();
         }
 
@@ -71,6 +73,7 @@ namespace Online_Auction.Controllers
         [Route("sellers/get/{sellerId}")]
         public async Task<IActionResult> GetSellerById(long sellerId)
         {
+            //Write Your Code Here
             throw new NotImplementedException();
         }
 
@@ -83,6 +86,7 @@ namespace Online_Auction.Controllers
         [Route("sellers/get/bids-on-product/{productId}")]
         public async Task<IActionResult> GetBidsByProductId(long productId)
         {
+            //Write Your Code Here
             throw new NotImplementedException();
         }
 
@@ -94,6 +98,7 @@ namespace Online_Auction.Controllers
         [Route("sellers/get/all")]
         public async Task<IEnumerable<Seller>> ListAllSellers()
         {
+            //Write Your Code Here
             throw new NotImplementedException();
         }
         #endregion
